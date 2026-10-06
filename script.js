@@ -118,3 +118,14 @@ document.addEventListener("keydown", (event) => {
     closeProfile();
   }
 });
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab") return;
+
+  if (profileModal?.getAttribute("aria-hidden") === "false") {
+    event.preventDefault();
+    closeProfileButton.focus();
+  } else if (certificateModal?.getAttribute("aria-hidden") === "false") {
+    event.preventDefault();
+    closeCertificateButton.focus();
+  }
+});
