@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="nl" data-theme="light" data-text="normal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armine Vdn Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio van Armine Vardanyan, frontend developer in opleiding met focus op HTML, CSS, JavaScript, React en toegankelijke websites."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- SKIP LINK -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ACCESSIBILITY TOOLS -->
+    <div class="accessibility-tools" aria-label="Toegankelijkheidsopties">
+      <button id="increase-text" aria-label="Tekst vergroten">A+</button>
+      <button id="decrease-text" aria-label="Tekst verkleinen">A-</button>
+      <button id="contrast-btn" aria-label="Contrast modus">Contrast</button>
+    </div>
+
+    <!-- SIDEBAR -->
+    <header>
+      <nav class="navbar" aria-label="Hoofdnavigatie">
+        <!-- PROFIEL -->
+        <div class="profile">
+          <button
+            class="profile-button"
+            id="open-profile"
+            type="button"
+            aria-label="Open profielfoto"
+          >
+            <img
+              src="foto.png"
+              alt="Profielfoto van Armine"
+              class="profile-img"
+            />
+          </button>
+        </div>
+
+        <h1>
+          <span class="portfolio-title">PORTFOLIO</span>
+          <span>Armine Vardanyan</span>
+        </h1>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">Over mij</a></li>
+          <li><a href="#projects">Projecten</a></li>
+          <li><a href="#journey">Leerpad</a></li>
+
+          <!-- POPUP BUTTON -->
+          <li>
+            <button class="nav-button" id="open-cert" type="button">
+              Certificaat
+            </button>
+          </li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-text">
+          <p class="eyebrow">Frontend developer in opleiding</p>
+          <h2>Ik bouw duidelijke websites die werken op elk scherm.</h2>
+
+          <p>
+            Ik ben Armine Vardanyan. Ik bouw toegankelijke en
+            gebruiksvriendelijke websites met HTML, CSS en JavaScript. Tijdens
+            mijn opleiding werk ik aan projecten waarin ik aandacht besteed aan
+            structuur, toegankelijkheid en een prettige gebruikerservaring.
+          </p>
+
+          <p>
+            Ik leer graag nieuwe technieken en werk stap voor stap aan het
+            uitbreiden van mijn vaardigheden als frontend developer. Mijn doel
+            is om moderne websites te ontwikkelen die voor iedereen goed
+            bruikbaar zijn.
+          </p>
+
+          <div class="hero-actions" aria-label="Belangrijke acties">
+            <a class="button-link primary" href="#projects">Bekijk projecten</a>
+            <a class="button-link secondary" href="#contact">Neem contact op</a>
+          </div>
+
+          <ul class="hero-stats" aria-label="Portfolio highlights">
+            <li><strong>4</strong><span>projecten</span></li>
+            <li><strong>WCAG</strong><span>toegankelijkheid</span></li>
+            <li><strong>Git</strong><span>versiebeheer</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Over mij</h2>
+
+        <p>
+          Ik ben een gemotiveerde frontend developer in opleiding met een sterke
+          interesse in webontwikkeling en digitale toegankelijkheid. Ik werk
+          graag aan projecten waarin techniek, gebruiksvriendelijkheid en design
+          samenkomen.
+        </p>
+
+        <p>
+          Tijdens mijn leertraject richt ik mij op HTML, CSS, JavaScript, React,
+          Debugging, Vs Code en web accessibility. Ik vind het belangrijk om
+          niet alleen te begrijpen hoe iets werkt, maar ook waarom een bepaalde
+          oplossing de beste keuze is.
+        </p>
+
+        <h3>Waar ik momenteel aan werk</h3>
+
+        <ul>
+          <li>Semantic HTML, JavaScript en moderne CSS</li>
+          <li>Toegankelijkheid volgens WCAG-richtlijnen 2.2</li>
+          <li>JavaScript fundamentals</li>
+          <li>Responsive webdesign</li>
+          <li>Versiebeheer met Git en GitHub</li>
+        </ul>
+
+        <h3>Mijn aanpak</h3>
+
+        <p>
+          Ik leer door projecten te bouwen, problemen zelfstandig te onderzoeken
+          en oplossingen stap voor stap uit te werken. Op die manier ontwikkel
+          ik niet alleen technische kennis, maar ook vaardigheden die belangrijk
+          zijn in een professionele ontwikkelomgeving.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projecten</h2>
+        <p>
+          Vier projecten uit mijn leertraject die laten zien hoe ik werk met
+          layout, responsive design, JavaScript en toegankelijke structuur.
+        </p>
+
+        <div class="project-grid">
+          <a class="project-card" href="projects/recipe-page/index.html">
+            <span class="project-type">Frontend Mentor</span>
+            <h3>Recipe Page</h3>
+            <p>
+              Een nette receptpagina met semantische HTML, responsive CSS,
+              custom styling en aandacht voor spacing en leesbaarheid.
+            </p>
+            <p class="project-tech">HTML, CSS, responsive design</p>
+          </a>
+
+          <a class="project-card" href="projects/bbc-grid/index.html">
+            <span class="project-type">CSS Grid</span>
+            <h3>BBC Grid Layout</h3>
+            <p>
+              Een nieuwspagina-oefening waarin ik met CSS Grid, afbeeldingen,
+              navigatie en responsive layout werk.
+            </p>
+            <p class="project-tech">HTML, CSS Grid, responsive layout</p>
+          </a>
+
+          <a class="project-card" href="projects/loveconnect/index.html">
+            <span class="project-type">Multi-page website</span>
+            <h3>LoveConnect</h3>
+            <p>
+              Een kleine website met meerdere pagina's, navigatie, contentcards
+              en formulieren voor een fictieve datingapp.
+            </p>
+            <p class="project-tech">HTML, CSS, pages, forms</p>
+          </a>
+
+          <a class="project-card" href="projects/payment-calculator/index.html">
+            <span class="project-type">JavaScript tool</span>
+            <h3>Payment Calculator</h3>
+            <p>
+              Een interactieve calculator die abonnementskosten berekent met
+              jaar-korting en gratis maanden via referrals.
+            </p>
+            <p class="project-tech">JavaScript, forms, calculations</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="journey">
+        <h2>Leerpad</h2>
+        <p>
+          Ik leer door projecten te bouwen, feedback te verwerken en mijn code
+          steeds duidelijker te maken.
+        </p>
+
+        <ol class="timeline">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>Basis stevig maken</h3>
+              <p>
+                Semantische HTML, moderne CSS, responsive layouts en nette
+                bestandsstructuren blijven oefenen.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>Interactie toevoegen</h3>
+              <p>
+                JavaScript gebruiken voor formulieren, states, berekeningen en
+                toegankelijke UI-interactie.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Projecten verbeteren</h3>
+              <p>
+                Projecten publiceren met duidelijke structuur, live links,
+                screenshots en korte uitleg.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Wil je samenwerken, feedback geven of mijn werk bekijken? Stuur mij
+          gerust een bericht.
+        </p>
+        <div class="contact">
+          <form>
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Bericht</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Verstuur</button>
+          </form>
+          <div class="contact-links" aria-label="Profiel links">
+            <a href="#" aria-label="GitHub profiel toevoegen">GitHub volgt</a>
+            <a
+              href="https://www.linkedin.com/in/armine-vardanyan-982892228/"
+              aria-label="LinkedIn profiel van Armine Vardanyan"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Armine Vardanyan Portfolio</p>
+    </footer>
+
+    <!-- CERTIFICAAT POPUP -->
+    <div id="cert-modal" class="modal" aria-hidden="true">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cert-title"
+      >
+        <h2 id="cert-title">Certificaat</h2>
+
+        <img src="certificaat.jpg" alt="Front-End Developer certificaat" />
+
+        <button id="close-cert" type="button">Sluiten</button>
+      </div>
+    </div>
+    <!-- PROFIELFOTO POPUP -->
+    <div id="profile-modal" class="modal" aria-hidden="true">
+      <div
+        class="modal-content profile-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="profile-title"
+      >
+        <h2 id="profile-title">Profielfoto</h2>
+
+        <img src="foto.png" alt="Profielfoto van Armine Vardanyan" />
+
+        <button id="close-profile" type="button">Sluiten</button>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winc Winc Payment Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <a class="back-link" href="../../index.html#projects">Back to portfolio</a>
+
+      <section class="intro">
+        <p class="eyebrow">JavaScript project</p>
+        <h1>Winc Winc Payment Calculator</h1>
+        <p>
+          Calculate subscription costs with yearly discounts and free months
+          earned through referrals.
+        </p>
+      </section>
+
+      <form class="calculator-form" id="payment-form">
+        <label for="name">Customer name</label>
+        <input id="name" name="name" type="text" value="Daniela" required />
+
+        <label for="price">Monthly price</label>
+        <input id="price" name="price" type="number" min="1" value="5" required />
+
+        <label for="months">Subscription months</label>
+        <input id="months" name="months" type="number" min="1" value="12" required />
+
+        <label for="discount">Year discount (%)</label>
+        <input id="discount" name="discount" type="number" min="0" max="100" value="10" required />
+
+        <label for="referrals">Referrals</label>
+        <input id="referrals" name="referrals" type="number" min="0" value="8" required />
+
+        <button type="submit">Calculate payment</button>
+      </form>
+
+      <section class="result-card" aria-live="polite">
+        <h2 id="result-name">Daniela pays</h2>
+        <p class="price" id="result-total">EUR 45.00</p>
+        <p id="result-details">2 free months, 10 paid months, 10% discount.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

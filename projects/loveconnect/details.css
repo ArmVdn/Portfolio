@@ -1,0 +1,52 @@
+/* Positioning */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Box Model */
+  .details-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  /* Typography */
+  .details-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .details-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 20px;
+  }
+  
+  /* Visual */
+  .details-container {
+    background-color: #f3f8f3;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  .details-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Miscellaneous */
+  .back-link {
+    margin-top: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #274d2f;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoveConnect - Sign Up</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="sign-up.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Sign Up</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required />
+
+      <label for="description">Tell us about yourself:</label>
+      <textarea id="description" name="description" rows="5" cols="60" placeholder="Write something about you..."></textarea>
+
+      <label for="city">City:</label>
+      <select id="city" name="city">
+        <option value="">Select a city</option>
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Utrecht">Utrecht</option>
+        <option value="den Haag">Den Haag</option>
+      </select>
+
+      <label>Interests:</label>
+      <input type="checkbox" id="music" name="interests" value="music" />
+      <label for="music">Music</label>
+      <input type="checkbox" id="travel" name="interests" value="travel" />
+      <label for="travel">Travel</label>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter a strong password" required />
+
+      <button type="submit">Create Account</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 LoveConnect. All rights reserved.</p>
+  </footer>
+</body>
+</html>

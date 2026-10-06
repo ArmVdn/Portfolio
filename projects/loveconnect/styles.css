@@ -1,0 +1,172 @@
+/* style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5ecd5; 
+  }
+
+  .portfolio-back {
+    display: inline-block;
+    color: #34470d;
+    font-weight: 700;
+    margin: 12px 0 0 20px;
+  }
+  main {
+    text-align: center;
+    padding: 20px;
+  }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #F5ECD5; /* White background for the container */
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }  
+h1 {
+    color: #626f47;
+    text-align: center;
+    font-size: 60px;
+  }
+  h2 {
+    margin-top: 0;
+    color: #626F47; /* dark gray text */
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .image-container img {
+    opacity: 0.5;
+    filter: brightness(0.9);
+    width: 300px; /* adjust as needed */
+    height: auto;
+  }
+  li {
+    background-color: #f5ecd5;
+    color: #626F47;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;                 /* Make it a flex container */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;          /* Center vertically */
+  }
+  .menu li {
+    background-color: #f5ecd5; /* light green background */
+  }
+  li a {
+    color: #1e270c;
+    background-color: #f5ecd5;
+    padding: 0px 5px;
+    display: flex;                 /* Make it a flex container */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    gap: 0px;
+    justify-content: center;       /* Center horizontally */
+    align-items: center;           /* Center vertically */
+  }
+  li a:hover {
+    background-color: #c0cea5;   /* Darker blue on hover */
+  }
+  header {
+    background-color: #34470d; /* light green background */
+    color: #F5ECD5; /* white text */
+    padding: 10px;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #F5ECD5;
+  }
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 30px;
+  }
+  article {
+    flex: 1;
+    background-color: #F5ECD5;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+  }
+  article {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px 20px 30px 40px; /* top right bottom left */
+  }  
+  .container {
+    display: flex;
+    flex-direction: row; /* or 'column' if you want vertical layout */
+    gap: 20px;
+  }
+  article {
+    flex: 1;
+    background-color: rgb(240, 243, 230);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px 20px 30px 40px; /* top right bottom left */
+  }
+  /* Descendant combinator targets img inside article */
+  article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  } 
+  article img:hover {
+    transform: scale(1.05);
+  } 
+  article {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  article:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  article:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }   
+  footer {
+    background-color: #626F47; /* light green background */
+    color: #F5ECD5; /* white text */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

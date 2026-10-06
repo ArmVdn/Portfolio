@@ -1,0 +1,168 @@
+:root {
+  --clr-heading: hsl(24, 5%, 18%);
+  --clr-body: hsl(30, 10%, 34%);
+  --clr-accent: hsl(14, 74%, 27%);
+  --clr-bg: hsl(30, 54%, 90%);
+  --clr-box: hsl(330, 100%, 98%);
+
+  --fs-body: 1rem;
+  --fs-heading: 2rem;
+  --fs-section: 1.25rem;
+
+  --ff-serif: 'Young Serif', serif;
+  --ff-sans: 'Outfit', sans-serif;
+}
+
+/* Algemene opmaak en reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-bg);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  color: var(--clr-body);
+  line-height: 1.6;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.portfolio-back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--clr-accent);
+  font-weight: 700;
+}
+
+/* Kaart als container met witte achtergrond */
+.card {
+  background-color: white;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+/* Afbeelding bovenaan */
+.top-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Titels en secties */
+h1 {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-heading);
+  color: var(--clr-heading);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-section);
+  color: var(--clr-accent);
+  margin-bottom: 0.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Preparation time box */
+.preparation-time {
+  background-color: var(--clr-box);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.preparation-time ul {
+  list-style: disc inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preparation-time li {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  color: var(--clr-body);
+}
+
+/* Ingredients */
+.ingredients ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+/* Instructions */
+.instructions h2 {
+  color: var(--clr-accent);
+}
+
+.instructions ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.instructions ol li::marker {
+  color: var(--clr-accent);
+  font-weight: bold;
+}
+
+.instructions strong {
+  color: black;
+  font-weight: bold;
+}
+
+/* Nutrition table */
+.nutrition-table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition-table th {
+  background-color: var(--clr-bg);
+  color: var(--clr-heading);
+  padding: 0.5rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.nutrition-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.nutrition-table td:last-child {
+  color: var(--clr-accent);
+  font-weight: bold;
+}
+
+.grid-layout section {
+  padding: 0.5rem;
+}
+
+/* Responsieve layout */
+@media (min-width: 768px) {
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+}
