@@ -222,7 +222,7 @@ textarea:focus {
 .hero {
   display: flex;
   gap: var(--space-lg);
-  min-height: calc(100vh - 64px);
+  min-height: auto;
   align-items: center;
 }
 

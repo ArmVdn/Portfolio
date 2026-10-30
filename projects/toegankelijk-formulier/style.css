@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: #d1ddc9;
+  color: #1a1a1a;
+}
+
+header,
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-weight: 600;
+}
+
+input,
+button {
+  font: inherit;
+  padding: 0.75rem;
+  border: 2px solid #687061;
+  border-radius: 4px;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  background: #41483c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid #41483c;
+  outline-offset: 3px;
+}
