@@ -1,48 +1,348 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Winc Winc Payment Calculator</title>
+    <meta
+      name="description"
+      content="Vergelijk de totale kosten en gemiddelde maandprijs van twee abonnementen."
+    />
+    <title>Abonnementen vergelijken | Armine Vardanyan</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main class="calculator">
-      <a class="back-link" href="../../index.html#projects">Back to portfolio</a>
 
+  <body>
+    <a class="skip-link" href="#main-content">Direct naar de inhoud</a>
+
+    <div class="page-top">
+      <a class="back-link" href="../../index.html#projects">
+        Terug naar portfolio
+      </a>
+    </div>
+
+    <main class="calculator" id="main-content" tabindex="-1">
       <section class="intro">
-        <p class="eyebrow">JavaScript project</p>
-        <h1>Winc Winc Payment Calculator</h1>
+        <p class="eyebrow">Abonnementenvergelijker</p>
+        <h1>Vergelijk je abonnementen</h1>
         <p>
-          Calculate subscription costs with yearly discounts and free months
-          earned through referrals.
+          Welk abonnement kost jou minder? Vergelijk twee opties over dezelfde
+          periode en bekijk het verschil.
         </p>
       </section>
 
-      <form class="calculator-form" id="payment-form">
-        <label for="name">Customer name</label>
-        <input id="name" name="name" type="text" value="Daniela" required />
+      <form
+        id="comparison-form"
+        class="comparison-form"
+        aria-labelledby="comparison-form-title"
+      >
+        <h2 id="comparison-form-title">Vul je abonnementen in</h2>
 
-        <label for="price">Monthly price</label>
-        <input id="price" name="price" type="number" min="1" value="5" required />
+        <div class="period-setting">
+          <label for="period-months"> Vergelijkingsperiode in maanden </label>
+          <input
+            id="period-months"
+            name="periodMonths"
+            type="number"
+            min="1"
+            step="1"
+            value="12"
+            aria-describedby="period-help period-months-error"
+            required
+          />
+          <p id="period-help" class="field-help">
+            Beide abonnementen worden over dezelfde periode vergeleken.
+          </p>
+          <p id="period-months-error" class="field-error" hidden></p>
+        </div>
 
-        <label for="months">Subscription months</label>
-        <input id="months" name="months" type="number" min="1" value="12" required />
+        <p class="comparison-help">
+          De korting geldt voor alle betaalde maanden. Eenmalige kosten tellen
+          apart mee.
+        </p>
 
-        <label for="discount">Year discount (%)</label>
-        <input id="discount" name="discount" type="number" min="0" max="100" value="10" required />
+        <div class="plans-grid">
+          <fieldset class="plan-card" data-plan="a">
+            <legend>Abonnement A</legend>
 
-        <label for="referrals">Referrals</label>
-        <input id="referrals" name="referrals" type="number" min="0" value="8" required />
+            <div class="form-field">
+              <label for="plan-a-name">Naam abonnement</label>
+              <input
+                id="plan-a-name"
+                name="planAName"
+                type="text"
+                value="Abonnement A"
+                maxlength="60"
+                aria-describedby="plan-a-name-error"
+                required
+              />
+              <p id="plan-a-name-error" class="field-error" hidden></p>
+            </div>
 
-        <button type="submit">Calculate payment</button>
+            <div class="form-field">
+              <label for="plan-a-price">Maandprijs (€)</label>
+              <input
+                id="plan-a-price"
+                name="planAPrice"
+                type="number"
+                min="0"
+                step="0.01"
+                value="10"
+                aria-describedby="plan-a-price-error"
+                required
+              />
+              <p id="plan-a-price-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-a-discount">Korting (%)</label>
+              <input
+                id="plan-a-discount"
+                name="planADiscount"
+                type="number"
+                min="0"
+                max="100"
+                step="0.01"
+                value="0"
+                aria-describedby="plan-a-discount-error"
+                required
+              />
+              <p id="plan-a-discount-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-a-free-months">Gratis maanden</label>
+              <input
+                id="plan-a-free-months"
+                name="planAFreeMonths"
+                type="number"
+                min="0"
+                max="12"
+                step="1"
+                value="0"
+                aria-describedby="plan-a-free-months-error"
+                required
+              />
+              <p id="plan-a-free-months-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-a-fees">Eenmalige kosten (€)</label>
+              <input
+                id="plan-a-fees"
+                name="planAFees"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+                aria-describedby="plan-a-fees-error"
+                required
+              />
+              <p id="plan-a-fees-error" class="field-error" hidden></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="plan-card" data-plan="b">
+            <legend>Abonnement B</legend>
+
+            <div class="form-field">
+              <label for="plan-b-name">Naam abonnement</label>
+              <input
+                id="plan-b-name"
+                name="planBName"
+                type="text"
+                value="Abonnement B"
+                maxlength="60"
+                aria-describedby="plan-b-name-error"
+                required
+              />
+              <p id="plan-b-name-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-b-price">Maandprijs (€)</label>
+              <input
+                id="plan-b-price"
+                name="planBPrice"
+                type="number"
+                min="0"
+                step="0.01"
+                value="12"
+                aria-describedby="plan-b-price-error"
+                required
+              />
+              <p id="plan-b-price-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-b-discount">Korting (%)</label>
+              <input
+                id="plan-b-discount"
+                name="planBDiscount"
+                type="number"
+                min="0"
+                max="100"
+                step="0.01"
+                value="10"
+                aria-describedby="plan-b-discount-error"
+                required
+              />
+              <p id="plan-b-discount-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-b-free-months">Gratis maanden</label>
+              <input
+                id="plan-b-free-months"
+                name="planBFreeMonths"
+                type="number"
+                min="0"
+                max="12"
+                step="1"
+                value="0"
+                aria-describedby="plan-b-free-months-error"
+                required
+              />
+              <p id="plan-b-free-months-error" class="field-error" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="plan-b-fees">Eenmalige kosten (€)</label>
+              <input
+                id="plan-b-fees"
+                name="planBFees"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+                aria-describedby="plan-b-fees-error"
+                required
+              />
+              <p id="plan-b-fees-error" class="field-error" hidden></p>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-actions">
+          <button id="compare-button" type="submit" disabled>
+            Vergelijk abonnementen
+          </button>
+          <button
+            id="reset-comparison"
+            class="button-secondary"
+            type="button"
+            disabled
+          >
+            Herstel voorbeeld
+          </button>
+        </div>
+
+        <p
+          id="form-feedback"
+          class="form-feedback"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+
+        <noscript>
+          <p>Schakel JavaScript in om abonnementen te vergelijken.</p>
+        </noscript>
       </form>
 
-      <section class="result-card" aria-live="polite">
-        <h2 id="result-name">Daniela pays</h2>
-        <p class="price" id="result-total">EUR 45.00</p>
-        <p id="result-details">2 free months, 10 paid months, 10% discount.</p>
+      <section
+        id="comparison-results"
+        class="comparison-results"
+        aria-labelledby="results-title"
+        hidden
+      >
+        <h2 id="results-title" tabindex="-1">Jouw vergelijking</h2>
+
+        <p
+          id="comparison-summary"
+          class="comparison-summary"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+
+        <div class="results-grid">
+          <article
+            id="result-a-card"
+            class="result-card"
+            aria-labelledby="result-a-name"
+          >
+            <p id="result-a-badge" class="winner-label" hidden>
+              Laagste totaalprijs
+            </p>
+            <h3 id="result-a-name">Abonnement A</h3>
+            <p class="result-label">Totale kosten</p>
+            <p id="result-a-total" class="result-price">—</p>
+
+            <dl class="result-details">
+              <div>
+                <dt>Gemiddeld per maand</dt>
+                <dd id="result-a-average">—</dd>
+              </div>
+              <div>
+                <dt>Betaalde maanden</dt>
+                <dd id="result-a-paid-months">—</dd>
+              </div>
+              <div>
+                <dt>Gratis maanden</dt>
+                <dd id="result-a-free-months">—</dd>
+              </div>
+              <div>
+                <dt>Korting op maandkosten</dt>
+                <dd id="result-a-discount">—</dd>
+              </div>
+              <div>
+                <dt>Eenmalige kosten</dt>
+                <dd id="result-a-fees">—</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article
+            id="result-b-card"
+            class="result-card"
+            aria-labelledby="result-b-name"
+          >
+            <p id="result-b-badge" class="winner-label" hidden>
+              Laagste totaalprijs
+            </p>
+            <h3 id="result-b-name">Abonnement B</h3>
+            <p class="result-label">Totale kosten</p>
+            <p id="result-b-total" class="result-price">—</p>
+
+            <dl class="result-details">
+              <div>
+                <dt>Gemiddeld per maand</dt>
+                <dd id="result-b-average">—</dd>
+              </div>
+              <div>
+                <dt>Betaalde maanden</dt>
+                <dd id="result-b-paid-months">—</dd>
+              </div>
+              <div>
+                <dt>Gratis maanden</dt>
+                <dd id="result-b-free-months">—</dd>
+              </div>
+              <div>
+                <dt>Korting op maandkosten</dt>
+                <dd id="result-b-discount">—</dd>
+              </div>
+              <div>
+                <dt>Eenmalige kosten</dt>
+                <dd id="result-b-fees">—</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
       </section>
+
+      <footer class="project-footer">
+        <p>Portfolio-project van Armine Vardanyan</p>
+      </footer>
     </main>
 
     <script src="script.js"></script>

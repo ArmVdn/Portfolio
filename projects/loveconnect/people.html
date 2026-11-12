@@ -1,28 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoveConnect - People</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="people.html">People</a></li>
-        <li><a href="sign-up.html">Sign Up</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Meet Our Community</h1>
-    <p>From gamers to poets, adventurers to introverts—our community is as diverse as it gets. There's someone here for everyone.</p>
-    <img src="groupofpeople.jpeg" alt="Group of diverse smiling people" width="200" />
-  </main>
-  <footer>
-    <p>&copy; 2025 LoveConnect. All rights reserved.</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveConnect — People</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <a class="portfolio-back" href="../../index.html#projects">
+      Back to portfolio
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">LoveConnect</a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li>
+            <a href="people.html" aria-current="page">People</a>
+          </li>
+          <li><a href="details.html">About</a></li>
+          <li>
+            <a class="nav-signup" href="sign-up.html">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="people-intro" aria-labelledby="people-title">
+        <p class="eyebrow">Meet the community</p>
+        <h1 id="people-title">Different people. Common ground.</h1>
+        <p class="people-description">
+          A favourite hobby, a shared curiosity, a good conversation. Discover
+          what could bring you together.
+        </p>
+        <p class="people-demo-note">
+          These fictional profiles are examples for this portfolio demo.
+        </p>
+      </section>
+
+      <div class="people-grid">
+        <article class="profile-card" aria-labelledby="alex-name">
+          <div class="profile-avatar" aria-hidden="true">AK</div>
+
+          <h2 id="alex-name">Alex King</h2>
+          <p class="profile-location">28 · Amsterdam</p>
+          <p class="profile-description">
+            Always looking for a new walking route and a good coffee.
+          </p>
+
+          <ul class="profile-interests" aria-label="Interests">
+            <li>Nature</li>
+            <li>Coffee</li>
+            <li>Photography</li>
+          </ul>
+
+          <details class="profile-details">
+            <summary>More about Alex</summary>
+            <p>
+              My ideal weekend starts outdoors and ends with a home-cooked meal.
+              I would love to meet someone who enjoys the little things.
+            </p>
+          </details>
+        </article>
+
+        <article class="profile-card" aria-labelledby="riley-name">
+          <div class="profile-avatar" aria-hidden="true">RM</div>
+
+          <h2 id="riley-name">Riley Morgan</h2>
+          <p class="profile-location">31 · Utrecht</p>
+          <p class="profile-description">
+            Music lover, curious traveller and enthusiastic home cook.
+          </p>
+
+          <ul class="profile-interests" aria-label="Interests">
+            <li>Music</li>
+            <li>Travel</li>
+            <li>Cooking</li>
+          </ul>
+
+          <details class="profile-details">
+            <summary>More about Riley</summary>
+            <p>
+              I enjoy discovering small music venues and trying recipes from
+              places I have visited. Tell me about your favourite dish.
+            </p>
+          </details>
+        </article>
+
+        <article class="profile-card" aria-labelledby="jordan-name">
+          <div class="profile-avatar" aria-hidden="true">JL</div>
+
+          <h2 id="jordan-name">Jordan Lee</h2>
+          <p class="profile-location">29 · Rotterdam</p>
+          <p class="profile-description">
+            Happiest with a good book, a museum visit or a board game.
+          </p>
+
+          <ul class="profile-interests" aria-label="Interests">
+            <li>Books</li>
+            <li>Art</li>
+            <li>Board games</li>
+          </ul>
+
+          <details class="profile-details">
+            <summary>More about Jordan</summary>
+            <p>
+              I like conversations that make me see things differently. A
+              relaxed afternoon exploring an exhibition is my kind of plan.
+            </p>
+          </details>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">LoveConnect</p>
+      <p>Fictional brand · Portfolio concept</p>
+    </footer>
+  </body>
 </html>

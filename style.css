@@ -571,3 +571,49 @@ form label {
   outline: 3px solid var(--white);
   outline-offset: 3px;
 }
+/* Projectkaarten laten meegroeien met tekst */
+.project-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Meer leesruimte op kleine schermen */
+@media (max-width: 768px) {
+  main {
+    padding: 16px;
+  }
+
+  section {
+    padding: 16px;
+  }
+
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact {
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .contact form,
+  .contact input,
+  .contact textarea {
+    min-width: 0;
+  }
+}
+
+/* Leesbare knoppen in de contraststand */
+.high-contrast .button-link.primary {
+  background: #ffff00;
+  color: #000000;
+  border-color: #ffff00;
+}
+
+.high-contrast .nav-links a:hover,
+.high-contrast .nav-links a:focus-visible,
+.high-contrast .nav-button:hover,
+.high-contrast .nav-button:focus-visible {
+  background: #ffffff !important;
+  color: #000000 !important;
+}

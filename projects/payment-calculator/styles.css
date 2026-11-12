@@ -6,106 +6,354 @@
   --accent: #25635d;
   --accent-dark: #173f3b;
   --line: #cfdad4;
+  --error: #a12626;
 }
 
 * {
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
+a {
+  color: var(--accent-dark);
+  text-underline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  padding: 12px 16px;
+  background: var(--surface);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page-top,
 .calculator {
-  width: min(960px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 40px 0;
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.page-top {
+  padding-block: 20px;
 }
 
 .back-link {
-  color: var(--accent-dark);
   font-weight: 700;
 }
 
+.calculator {
+  padding-bottom: 24px;
+}
+
 .intro {
-  max-width: 680px;
-  margin: 32px 0;
+  max-width: 65ch;
+  margin-block: 12px 32px;
 }
 
 .eyebrow {
+  margin: 0 0 8px;
   color: var(--accent);
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 h1,
 h2,
-p {
-  margin-top: 0;
+h3 {
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1;
+  margin: 0 0 16px;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
 }
 
-.calculator-form,
-.result-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 24px;
+h2 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
 }
 
-.calculator-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 16px;
+h3 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
 }
 
-.calculator-form label {
+.intro > p:last-child {
+  margin: 0;
+}
+
+.comparison-form {
+  margin: 0;
+}
+
+.period-setting {
+  max-width: 380px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
   font-weight: 700;
 }
 
-.calculator-form input,
-.calculator-form button {
-  min-height: 44px;
-  border-radius: 8px;
+input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--muted);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text);
   font: inherit;
 }
 
-.calculator-form input {
-  border: 1px solid var(--line);
-  padding: 8px 10px;
+input[aria-invalid="true"] {
+  border: 2px solid var(--error);
+  background: #fff3f1;
 }
 
-.calculator-form button {
-  grid-column: 1 / -1;
-  border: 0;
+.field-help,
+.field-error {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.field-help {
+  color: var(--muted);
+}
+
+.field-error {
+  color: var(--error);
+  overflow-wrap: anywhere;
+}
+
+.comparison-help {
+  margin: 24px 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--accent);
+  background: #e1ece6;
+}
+
+.plans-grid,
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.plan-card {
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.plan-card legend {
+  padding-inline: 8px;
+  color: var(--accent-dark);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 7px;
   background: var(--accent);
-  color: white;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 800;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+}
+
+.button-secondary {
+  background: var(--surface);
+  color: var(--accent-dark);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: #e1ece6;
+  color: var(--accent-dark);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-feedback {
+  min-height: 1.6em;
+  margin: 12px 0 0;
+  color: var(--error);
+  font-weight: 700;
+}
+
+.comparison-results {
+  margin-top: 32px;
+}
+
+.comparison-summary {
+  margin: 0 0 24px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  background: #e1ece6;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .result-card {
-  margin-top: 16px;
+  min-width: 0;
+  padding: 24px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
 }
 
-.price {
-  margin-bottom: 4px;
+.result-card.is-cheaper {
+  border-color: var(--accent);
+}
+
+.winner-label {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.result-label {
+  margin: 0;
+  color: var(--muted);
+}
+
+.result-price {
+  margin: 4px 0 20px;
   color: var(--accent-dark);
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
-@media (max-width: 680px) {
-  .calculator-form {
+.result-details {
+  margin: 0;
+}
+
+.result-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.result-details > div:last-child {
+  border-bottom: 0;
+}
+
+.result-details dt {
+  color: var(--muted);
+}
+
+.result-details dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.project-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.project-footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .plans-grid,
+  .results-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plan-card,
+  .result-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .result-details > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .result-details dd {
+    text-align: left;
   }
 }

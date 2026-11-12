@@ -1,64 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoveConnect - Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-</head>
-<body>
-  <a class="portfolio-back" href="../../index.html#projects">Back to portfolio</a>
-  <header>
-    <h1>Welcome to LoveConnect</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="people.html">People</a></li>
-      <li><a href="sign-up.html">Sign Up</a></li>
-    </ul>
-  </nav>
-  <main>
-    <p>LoveConnect is the dating app where real people meet genuine matches. Whether you're looking for friendship, a fling, or a forever love—we've got you.</p> 
-  </main>
-  <div class="image-container">
-    <img src="pexels-photo.jpeg" alt="Happy couple smiling at the beach" width="200" />
-  </div>
-  <div class="container">
-    <article>
-      <h2>What is the App?</h2>
-      <p>This dating app connects people looking for meaningful relationships. It uses a smart algorithm to match users based on interests, location, and communication style.</p>
-    </article>
-    <article>
-      <h2>Key Features</h2>
-      <p>The app offers profile verification, in-depth bios, daily matches, chat features, and video call functionality. A swipe-based interface makes exploring fun and simple.</p>
-    </article>
-    <article>
-      <h2>Why Choose It?</h2>
-      <p>Unlike typical dating apps, this one focuses on quality over quantity. It’s designed for users who are serious about finding real connections, not just casual encounters.</p>
-    </article>
-    </div>
-    <div class="container">
-      <article>
-        <img src="groupofpeople.jpeg" alt="Group of people smiling together" />
-        <h2>What is LoveConnect?</h2>
-        <p>LoveConnect is your modern path to meaningful relationships, using intelligent matching to bring real people together.</p>
-      </article>
-      <article>
-        <img src="pexels-photo.jpeg" alt="Couple spending time together" />
-        <h2>Top Features</h2>
-        <p>From video calls to verified profiles and custom matchmaking, LoveConnect has all the tools for a safe and exciting experience.</p>
-      </article>
-      <article>
-        <img src="groupofpeople.jpeg" alt="Friends enjoying a social moment" />
-        <h2>Why Join Us?</h2>
-        <p>We're focused on authentic connections. Our platform is where people come to find more than just matches—they find partners.</p>
-      </article>
-    </div>    
-  <footer>
-    <p>&copy; 2025 LoveConnect. All rights reserved.</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LoveConnect: a fictional website about shared interests and new connections."
+    />
+    <title>LoveConnect — Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <a class="portfolio-back" href="../../index.html#projects">
+      Back to portfolio
+    </a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">LoveConnect</a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="details.html">About</a></li>
+          <li>
+            <a class="nav-signup" href="sign-up.html">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="home-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A fresh start, together</p>
+
+          <h1 id="home-title">A connection that feels like you.</h1>
+
+          <p class="hero-description">
+            Shared interests. New conversations. A little courage to say hello.
+            Discover a community where getting to know someone starts naturally.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="people.html"> Meet the community </a>
+
+            <a class="button button-secondary" href="details.html">
+              Our idea
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="groupofpeople.jpeg"
+            alt="Friends looking down at the camera together under a blue sky"
+          />
+          <figcaption>Every connection starts with a hello.</figcaption>
+        </figure>
+      </section>
+
+      <section class="features" aria-label="The LoveConnect idea">
+        <article class="feature">
+          <h2>Common ground</h2>
+          <p>Start with the things you both enjoy.</p>
+        </article>
+
+        <article class="feature">
+          <h2>Your own pace</h2>
+          <p>Make room for a thoughtful first conversation.</p>
+        </article>
+
+        <article class="feature">
+          <h2>A new beginning</h2>
+          <p>Friendship, a date, or simply someone new.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">LoveConnect</p>
+      <p>Fictional brand · Portfolio concept</p>
+    </footer>
+  </body>
 </html>

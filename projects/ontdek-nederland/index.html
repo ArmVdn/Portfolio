@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ontdek Nederland: inspiratie voor een dagje uit in de stad, de natuur of een museum."
+    />
+    <title>Ontdek Nederland | Inspiratie voor je volgende dagje uit</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Direct naar de inhoud</a>
+
+    <a class="portfolio-back" href="../../index.html#projects">
+      Terug naar portfolio
+    </a>
+
+    <header class="site-header">
+      <a class="site-logo" href="index.html"> Ontdek <span>Nederland</span> </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <ul class="nav-list">
+          <li><a href="#inspiratie">Bestemmingen</a></li>
+          <li><a href="#voor-je-vertrekt">Voor je vertrekt</a></li>
+          <li><a href="#over">Over dit project</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Steden · Natuur · Cultuur</p>
+
+          <h1 id="hero-title">Je volgende dagje uit begint hier.</h1>
+
+          <p class="hero-description">
+            Wandel langs de grachten, zoek de natuur op of stap een museum
+            binnen. Ontdek welke bestemming bij jouw dag past.
+          </p>
+
+          <a class="button" href="#inspiratie">Bekijk de bestemmingen</a>
+        </div>
+      </section>
+
+      <section
+        id="inspiratie"
+        class="destinations-section"
+        aria-labelledby="destinations-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">Waar wil jij naartoe?</p>
+          <h2 id="destinations-title">Kies jouw volgende bestemming</h2>
+        </div>
+
+        <div id="explore-tools" class="explore-tools" hidden>
+          <form id="search-form" class="search-form" role="search">
+            <label for="search-input">Zoek een bestemming</label>
+
+            <div class="search-row">
+              <input
+                type="search"
+                id="search-input"
+                name="zoekterm"
+                placeholder="Bijvoorbeeld Utrecht of museum"
+                aria-controls="destination-grid"
+              />
+              <button class="button" type="submit">Zoeken</button>
+            </div>
+          </form>
+
+          <div
+            class="filter-group"
+            role="group"
+            aria-label="Filter op categorie"
+          >
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="alles"
+              aria-pressed="true"
+            >
+              Alles
+            </button>
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="steden"
+              aria-pressed="false"
+            >
+              Steden
+            </button>
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="natuur"
+              aria-pressed="false"
+            >
+              Natuur
+            </button>
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="cultuur"
+              aria-pressed="false"
+            >
+              Cultuur
+            </button>
+          </div>
+        </div>
+
+        <p
+          id="results-count"
+          class="results-count"
+          role="status"
+          aria-atomic="true"
+        >
+          6 bestemmingen
+        </p>
+
+        <div id="destination-grid" class="destination-grid">
+          <!-- UTRECHT -->
+          <article
+            class="destination-card destination-card-featured"
+            data-category="steden"
+            aria-labelledby="utrecht-title"
+          >
+            <img
+              class="destination-image"
+              src="images/utrecht.jpg"
+              alt="De Oudegracht in Utrecht met een brug en huizen langs het water."
+              width="1280"
+              height="856"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Steden</p>
+              <h3 id="utrecht-title">Utrecht langs de grachten</h3>
+
+              <p>
+                Verken de grachten en ontdek de stad te voet of op de fiets.
+              </p>
+
+              <a class="card-link" href="https://www.ontdek-utrecht.nl/">
+                Meer over Utrecht
+              </a>
+            </div>
+          </article>
+
+          <!-- ROTTERDAM -->
+          <article
+            class="destination-card"
+            data-category="steden"
+            aria-labelledby="rotterdam-title"
+          >
+            <img
+              class="destination-image"
+              src="images/rotterdam.jpg"
+              alt="De Erasmusbrug over de Nieuwe Maas met de skyline van Rotterdam."
+              width="1920"
+              height="1112"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Steden</p>
+              <h3 id="rotterdam-title">Rotterdam en de Erasmusbrug</h3>
+
+              <p>
+                Ontdek het verhaal achter de opvallende brug over de Nieuwe
+                Maas.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://stadsarchief.rotterdam.nl/erasmusbrug"
+              >
+                Meer over de Erasmusbrug
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="destination-card"
+            data-category="natuur"
+            aria-labelledby="veluwe-title"
+          >
+            <img
+              class="destination-image"
+              src="images/veluwe.jpg"
+              alt="Zandlandschap met dennen op De Hoge Veluwe."
+              width="972"
+              height="648"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Natuur</p>
+              <h3 id="veluwe-title">De landschappen van De Hoge Veluwe</h3>
+
+              <p>
+                Ontdek een afwisselend landschap met bos, heide en
+                zandverstuivingen.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://hogeveluwe.nl/natuur-en-cultuur/natuur/landschappen"
+              >
+                Meer over De Hoge Veluwe
+              </a>
+            </div>
+          </article>
+
+          <!-- BIESBOSCH -->
+          <article
+            class="destination-card"
+            data-category="natuur"
+            aria-labelledby="biesbosch-title"
+          >
+            <img
+              class="destination-image"
+              src="images/biesbosch.jpg"
+              alt="Waterrijk landschap in de Biesbosch."
+              width="1100"
+              height="830"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Natuur</p>
+              <h3 id="biesbosch-title">Op ontdekking in de Biesbosch</h3>
+
+              <p>
+                Verken het waterrijke landschap via een wandelroute of een tocht
+                over het water.
+              </p>
+
+              <a class="card-link" href="https://www.beleefdebiesbosch.nl/">
+                Meer over de Biesbosch
+              </a>
+            </div>
+          </article>
+
+          <!-- RIJKSMUSEUM -->
+          <article
+            class="destination-card"
+            data-category="cultuur"
+            aria-labelledby="rijksmuseum-title"
+          >
+            <img
+              class="destination-image"
+              src="images/rijksmuseum.jpg"
+              alt="Het Rijksmuseum in Amsterdam."
+              width="1600"
+              height="1200"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Cultuur</p>
+              <h3 id="rijksmuseum-title">Kunst ontdekken in het Rijksmuseum</h3>
+
+              <p>
+                Maak in Amsterdam kennis met kunst van onder anderen Rembrandt
+                en Vermeer.
+              </p>
+
+              <a class="card-link" href="https://www.rijksmuseum.nl/nl">
+                Meer over het Rijksmuseum
+              </a>
+            </div>
+          </article>
+
+          <!-- MAURITSHUIS -->
+          <article
+            class="destination-card"
+            data-category="cultuur"
+            aria-labelledby="mauritshuis-title"
+          >
+            <img
+              class="destination-image"
+              src="images/mauritshuis.jpg"
+              alt="Het Mauritshuis in Den Haag."
+              width="1024"
+              height="768"
+              loading="lazy"
+            />
+
+            <div class="card-content">
+              <p class="category-label">Cultuur</p>
+              <h3 id="mauritshuis-title">Een bezoek aan het Mauritshuis</h3>
+
+              <p>
+                Ontdek in Den Haag schilderijen zoals Vermeers Meisje met de
+                parel.
+              </p>
+
+              <a class="card-link" href="https://www.mauritshuis.nl/">
+                Meer over het Mauritshuis
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div id="no-results" class="no-results" hidden>
+          <h3>Geen bestemmingen gevonden</h3>
+          <p>Probeer een andere zoekterm of bekijk alle categorieën.</p>
+          <button id="reset-search" class="button" type="button">
+            Toon alle bestemmingen
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="voor-je-vertrekt"
+        class="travel-tips"
+        aria-labelledby="tips-title"
+      >
+        <h2 id="tips-title">Voor je vertrekt</h2>
+
+        <div class="tips-grid">
+          <article>
+            <h3>Plan je bezoek</h3>
+            <p>
+              Bekijk op de officiële website de actuele openingstijden en
+              eventuele reserveringen.
+            </p>
+          </article>
+
+          <article>
+            <h3>Bekijk je route</h3>
+            <p>Kies je vervoer en controleer hoe je bij je bestemming komt.</p>
+          </article>
+
+          <article>
+            <h3>Check de voorzieningen</h3>
+            <p>
+              Zoek vooraf de informatie over toegankelijkheid en voorzieningen
+              die voor jou belangrijk zijn.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="over" class="about-project" aria-labelledby="about-title">
+        <h2 id="about-title">Over Ontdek Nederland</h2>
+        <p>
+          Ontdek Nederland is een portfolio-project van Armine Vardanyan. De
+          pagina verzamelt inspiratie voor een dagje uit. De links bij de
+          bestemmingen leiden naar officiële websites met meer informatie.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">Ontdek Nederland</p>
+      <p>Portfolio-project van Armine Vardanyan</p>
+
+      <div class="photo-credit">
+        <p>
+          Foto Utrecht:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Oudegracht_without_wharfs_in_Utrecht.jpg"
+          >
+            Robert von Oliva
+          </a>
+          (CC0).
+        </p>
+
+        <p>
+          Foto Rotterdam:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Erasmusbrug,_September_2019.jpg"
+          >
+            Martin Falbisoner </a
+          >,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            CC BY-SA 4.0 </a
+          >.
+        </p>
+
+        <p>
+          Foto De Hoge Veluwe:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Sand_Area_Hoge_Veluwe.jpg"
+          >
+            Stefan Kruithof
+          </a>
+          (publiek domein).
+        </p>
+
+        <p>
+          Foto Biesbosch:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Biesbosch_wetlands.jpg"
+          >
+            Johi </a
+          >,
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/">
+            CC BY-SA 3.0 </a
+          >.
+        </p>
+
+        <p>
+          Foto Rijksmuseum:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Amsterdam_-_Rijksmuseum.jpg"
+          >
+            Voytikof </a
+          >,
+          <a href="https://creativecommons.org/licenses/by-sa/2.5/">
+            CC BY-SA 2.5 </a
+          >.
+        </p>
+
+        <p>
+          Foto Mauritshuis:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Mauritshuis_Den_Haag.jpg"
+          >
+            FaceMePLS </a
+          >,
+          <a href="https://creativecommons.org/licenses/by/2.0/"> CC BY 2.0 </a
+          >.
+        </p>
+
+        <p>De foto's worden in de kaartjes bijgesneden weergegeven.</p>
+      </div>
+    </footer>
+  </body>
+</html>

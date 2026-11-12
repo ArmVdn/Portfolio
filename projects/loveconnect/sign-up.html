@@ -1,58 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoveConnect - Sign Up</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="people.html">People</a></li>
-        <li><a href="sign-up.html">Sign Up</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Sign Up</h1>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveConnect — Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" placeholder="Choose a username" required />
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <label for="description">Tell us about yourself:</label>
-      <textarea id="description" name="description" rows="5" cols="60" placeholder="Write something about you..."></textarea>
+    <a class="portfolio-back" href="../../index.html#projects">
+      Back to portfolio
+    </a>
 
-      <label for="city">City:</label>
-      <select id="city" name="city">
-        <option value="">Select a city</option>
-        <option value="Amsterdam">Amsterdam</option>
-        <option value="Utrecht">Utrecht</option>
-        <option value="den Haag">Den Haag</option>
-      </select>
+    <header class="site-header">
+      <a class="brand" href="index.html">LoveConnect</a>
 
-      <label>Interests:</label>
-      <input type="checkbox" id="music" name="interests" value="music" />
-      <label for="music">Music</label>
-      <input type="checkbox" id="travel" name="interests" value="travel" />
-      <label for="travel">Travel</label>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="details.html">About</a></li>
+          <li>
+            <a class="nav-signup" href="sign-up.html" aria-current="page">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+    <main id="main-content">
+      <div class="signup-layout">
+        <section class="signup-intro" aria-labelledby="signup-title">
+          <p class="eyebrow">A new beginning</p>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter a strong password" required />
+          <h1 id="signup-title">Your next hello starts here.</h1>
 
-      <button type="submit">Create Account</button>
-    </form>
-  </main>
-  <footer>
-    <p>&copy; 2025 LoveConnect. All rights reserved.</p>
-  </footer>
-</body>
+          <p class="signup-description">
+            Shared interests can be the start of something lovely. Introduce
+            yourself and imagine who you might meet.
+          </p>
+
+          <p class="signup-demo-note">
+            This is a portfolio demo. You can try the form; nothing is sent or
+            saved and no account is created.
+          </p>
+        </section>
+
+        <form id="signup-form" class="signup-form" aria-labelledby="form-title">
+          <h2 id="form-title">A little about you</h2>
+          <p class="form-help">Fields marked * are required.</p>
+
+          <div class="signup-fields">
+            <div class="form-field">
+              <label for="first-name">First name *</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="city">City *</label>
+              <select
+                id="city"
+                name="city"
+                autocomplete="address-level2"
+                required
+              >
+                <option value="">Choose your city</option>
+                <option value="Amsterdam">Amsterdam</option>
+                <option value="Utrecht">Utrecht</option>
+                <option value="Den Haag">Den Haag</option>
+                <option value="Rotterdam">Rotterdam</option>
+                <option value="Other">Another city</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field-wide">
+              <label for="email">Email address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-field form-field-wide">
+              <label for="description">
+                Tell us about yourself (optional)
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                maxlength="500"
+                aria-describedby="description-help"
+              ></textarea>
+              <p id="description-help" class="form-help">
+                What makes you smile? Maximum 500 characters.
+              </p>
+            </div>
+          </div>
+
+          <fieldset class="signup-interests">
+            <legend>Your interests (optional)</legend>
+
+            <div class="interest-options">
+              <label>
+                <input type="checkbox" name="interests" value="music" />
+                Music
+              </label>
+
+              <label>
+                <input type="checkbox" name="interests" value="travel" />
+                Travel
+              </label>
+
+              <label>
+                <input type="checkbox" name="interests" value="nature" />
+                Nature
+              </label>
+
+              <label>
+                <input type="checkbox" name="interests" value="food" />
+                Food
+              </label>
+            </div>
+          </fieldset>
+
+          <button id="signup-button" class="button" type="submit" disabled>
+            Try the demo
+          </button>
+
+          <p id="form-status" class="form-status" role="status"></p>
+
+          <noscript>
+            <p>Enable JavaScript to try this demo form.</p>
+          </noscript>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">LoveConnect</p>
+      <p>Fictional brand · Portfolio concept</p>
+    </footer>
+
+    <script>
+      const signupForm = document.getElementById("signup-form");
+      const signupButton = document.getElementById("signup-button");
+      const formStatus = document.getElementById("form-status");
+
+      signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        formStatus.textContent =
+          "Your demo introduction is complete. Nothing has been sent or saved.";
+      });
+
+      signupButton.disabled = false;
+    </script>
+  </body>
 </html>
