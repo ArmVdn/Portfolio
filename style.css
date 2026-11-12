@@ -617,3 +617,13 @@ form label {
   background: #ffffff !important;
   color: #000000 !important;
 }
+
+.training-title {
+  margin-top: 32px;
+}
+
+.certificate-card h4 {
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
