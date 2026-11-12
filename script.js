@@ -1,12 +1,8 @@
-const html = document.documentElement;
 const body = document.body;
 const links = document.querySelectorAll(".nav-links a");
 const increaseButton = document.getElementById("increase-text");
 const decreaseButton = document.getElementById("decrease-text");
 const contrastButton = document.getElementById("contrast-btn");
-const openCertificateButton = document.getElementById("open-cert");
-const certificateModal = document.getElementById("cert-modal");
-const closeCertificateButton = document.getElementById("close-cert");
 
 let currentFontSize = Number(localStorage.getItem("fontSize")) || 16;
 
@@ -14,29 +10,9 @@ function applyFontSize() {
   body.style.fontSize = `${currentFontSize}px`;
 }
 
-function openCertificate() {
-  if (!certificateModal || !closeCertificateButton) {
-    return;
-  }
-
-  certificateModal.style.display = "flex";
-  certificateModal.setAttribute("aria-hidden", "false");
-  closeCertificateButton.focus();
-}
-
-function closeCertificate() {
-  if (!certificateModal || !openCertificateButton) {
-    return;
-  }
-
-  certificateModal.style.display = "none";
-  certificateModal.setAttribute("aria-hidden", "true");
-  openCertificateButton.focus();
-}
-
 links.forEach((link) => {
   link.addEventListener("click", () => {
-    links.forEach((navLink) => navLink.classList.remove("active"));
+    links.forEach((item) => item.classList.remove("active"));
     link.classList.add("active");
   });
 });
@@ -60,27 +36,140 @@ decreaseButton?.addEventListener("click", () => {
 });
 
 contrastButton?.addEventListener("click", () => {
-  const isActive = body.classList.toggle("high-contrast");
-  localStorage.setItem("contrast", isActive ? "on" : "off");
+  const active = body.classList.toggle("high-contrast");
+  localStorage.setItem("contrast", active ? "on" : "off");
 });
 
-openCertificateButton?.addEventListener("click", openCertificate);
-closeCertificateButton?.addEventListener("click", closeCertificate);
+// Vier certificaten in dezelfde pop-up.
+const certificates = [
+  {
+    image: "certificaat.jpg",
+    alt: "Front-end Development-certificaat van Winc Academy voor Armine Vardanyan - Mnatsian",
+    caption:
+      "Front-end Development — Winc Academy. Afgerond op 12 september 2025.",
+  },
+  {
+    image: "certificaten/deque-web-accessibility-testing-2021.png?v=2",
+    alt: "Web Accessibility Testing-certificaat van Deque University voor Armine Vardanyan",
+    caption:
+      "Web Accessibility Testing: Basic Methods and Tools — Deque University. Afgerond op 13 december 2021.",
+  },
+  {
+    image: "certificaten/deque-basic-pdf-accessibility-2021.png?v=2",
+    alt: "Basic PDF Accessibility-certificaat van Deque University voor Armine Vardanyan",
+    caption:
+      "Basic PDF Accessibility 2.0 — Deque University. Afgerond op 19 november 2021.",
+  },
+  {
+    image: "certificaten/deque-advanced-pdf-accessibility-2021.png?v=2",
+    alt: "Advanced PDF Accessibility-certificaat van Deque University voor Armine Vardanyan",
+    caption:
+      "Advanced PDF Accessibility: Complex Tables and Forms — Deque University. Afgerond op 19 november 2021.",
+  },
+];
 
-certificateModal?.addEventListener("click", (event) => {
-  if (event.target === certificateModal) {
-    closeCertificate();
-  }
-});
+const certificateModal = document.getElementById("cert-modal");
+const certificateImage = document.getElementById("cert-image");
+const certificateCaption = document.getElementById("cert-caption");
+const certificateCounter = document.getElementById("cert-counter");
+const previousButton = document.getElementById("previous-cert");
+const nextButton = document.getElementById("next-cert");
+const closeCertificateButton = document.getElementById("close-cert");
 
-document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    certificateModal?.getAttribute("aria-hidden") === "false"
+let certificateIndex = 0;
+let certificateOpener;
+let previousOverflow = "";
+
+function showCertificate(index) {
+  certificateIndex = Math.max(0, Math.min(index, certificates.length - 1));
+
+  const certificate = certificates[certificateIndex];
+
+  certificateImage.src = certificate.image;
+  certificateImage.alt = certificate.alt;
+  certificateCaption.textContent = certificate.caption;
+
+  certificateCounter.textContent = `Certificaat ${certificateIndex + 1} van ${certificates.length}`;
+
+  previousButton.disabled = certificateIndex === 0;
+  nextButton.disabled = certificateIndex === certificates.length - 1;
+
+  if (document.activeElement === nextButton && nextButton.disabled) {
+    previousButton.focus();
+  } else if (
+    document.activeElement === previousButton &&
+    previousButton.disabled
   ) {
-    closeCertificate();
+    nextButton.focus();
+  }
+}
+
+function openCertificates(index, opener) {
+  certificateOpener = opener;
+  showCertificate(index);
+
+  previousOverflow = body.style.overflow;
+  certificateModal.showModal();
+  body.style.overflow = "hidden";
+  closeCertificateButton.focus();
+}
+
+document.getElementById("open-cert").addEventListener("click", (event) => {
+  openCertificates(0, event.currentTarget);
+});
+
+document.querySelectorAll("[data-certificate]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    openCertificates(Number(button.dataset.certificate), event.currentTarget);
+  });
+});
+
+previousButton.addEventListener("click", () => {
+  showCertificate(certificateIndex - 1);
+});
+
+nextButton.addEventListener("click", () => {
+  showCertificate(certificateIndex + 1);
+});
+
+closeCertificateButton.addEventListener("click", () => {
+  certificateModal.close();
+});
+
+certificateModal.addEventListener("close", () => {
+  body.style.overflow = previousOverflow;
+
+  if (certificateOpener?.isConnected) {
+    certificateOpener.focus();
   }
 });
+
+certificateModal.addEventListener("keydown", (event) => {
+  if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+
+    showCertificate(certificateIndex + (event.key === "ArrowRight" ? 1 : -1));
+  }
+});
+
+certificateModal.addEventListener("click", (event) => {
+  if (event.target !== certificateModal) return;
+
+  const rect = certificateModal.getBoundingClientRect();
+
+  if (
+    event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom
+  ) {
+    certificateModal.close();
+  }
+});
+
+// De bestaande profielfoto-pop-up.
 const openProfileButton = document.getElementById("open-profile");
 const profileModal = document.getElementById("profile-modal");
 const closeProfileButton = document.getElementById("close-profile");
@@ -105,27 +194,16 @@ openProfileButton?.addEventListener("click", openProfile);
 closeProfileButton?.addEventListener("click", closeProfile);
 
 profileModal?.addEventListener("click", (event) => {
-  if (event.target === profileModal) {
-    closeProfile();
-  }
+  if (event.target === profileModal) closeProfile();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    profileModal?.getAttribute("aria-hidden") === "false"
-  ) {
-    closeProfile();
-  }
-});
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Tab") return;
+  if (profileModal?.getAttribute("aria-hidden") !== "false") return;
 
-  if (profileModal?.getAttribute("aria-hidden") === "false") {
+  if (event.key === "Escape") closeProfile();
+
+  if (event.key === "Tab") {
     event.preventDefault();
     closeProfileButton.focus();
-  } else if (certificateModal?.getAttribute("aria-hidden") === "false") {
-    event.preventDefault();
-    closeCertificateButton.focus();
   }
 });

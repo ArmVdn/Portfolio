@@ -627,3 +627,74 @@ form label {
   font-size: 1.1rem;
   line-height: 1.4;
 }
+.certificate-open,
+.certificate-dialog button {
+  min-height: 44px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.certificate-dialog {
+  width: min(1100px, calc(100% - 24px));
+  max-width: calc(100% - 24px);
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: auto;
+}
+
+.certificate-dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+
+.certificate-dialog-heading,
+.certificate-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.certificate-dialog h2 {
+  margin: 0;
+}
+
+.certificate-dialog figure {
+  margin: 0;
+}
+
+.certificate-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 62vh;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.certificate-dialog figcaption {
+  margin-top: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.certificate-controls {
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.certificate-dialog button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .certificate-dialog {
+    padding: 16px;
+  }
+}
